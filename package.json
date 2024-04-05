@@ -20,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-js:minify": "terser src/*.js -o dist/js --compress --mangle",
+    "build-css:minify": "postcss src/styles/*.css -o dist/styles --use cssnano"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +41,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.1"
   }
 }
